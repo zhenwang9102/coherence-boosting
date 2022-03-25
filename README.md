@@ -7,7 +7,7 @@ Source code for ACL 2022 paper, "[Coherence boosting: When your pretrained langu
 * <a href='#introduction'>1. Introduction</a>
 * <a href='#citation'>2. Citation</a>
 * <a href='#demo'>3. Demo: Contrastive Next Token Prediction</a>
-* <a href='#nlg'>4. LAMBADA: Prediction of Words Requiring Long Context</a>
+* <a href='#lambada'>4. LAMBADA: Prediction of Words Requiring Long Context</a>
 * <a href='#nlg'>5. Natural Language Generation</a>
 * <a href='#nlu'>6. Natural Language Understanding</a>
 * <a href='#contact'>7. Contact</a>
@@ -52,12 +52,18 @@ We present a simply demo program to demonstrate the lack of coherence on existin
 # Other times anxiety is not as easy to see, but can still be just as ?
 
 ```
+****
+
+<span id='lambada'/>
+
+#### 4. LAMBADA: Prediction of Words Requiring Long Context
+
 
 ****
 
 <span id='nlg'/>
 
-#### 4. Natural Language Generation
+#### 5. Natural Language Generation
 Generic Text
 
 Dialogue Response Generation
@@ -66,7 +72,7 @@ Dialogue Response Generation
 
 <span id='nlu'/>
 
-#### 5. Natural Language Understanding
+#### 6. Natural Language Understanding
 
 |Task|Close Task|Question Answering|Text Classification|NLI|Fact Knowledge Retrieval
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
@@ -77,6 +83,6 @@ Dialogue Response Generation
 
 <span id='contact'/>
 
-#### 6. Contact
+#### 7. Contact
 If you have any questions, please feel free to contact Kolya (nikolay.malkin at mila.quebec) and Zhen (wang.9215 at osu.edu).
 
