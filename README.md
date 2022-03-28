@@ -129,7 +129,9 @@ Some important arguments are listed as follows, please use `python main.py --hel
 We evaluate the proposed **Coherence Boosting** on the following NLU tasks.
 |Task|Close Task|Question Answering|Text Classification|NLI|Fact Knowledge Retrieval
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
-|Datasets|[StoryCloze](https://cs.rochester.edu/nlp/rocstories/)<br />[HellaSwag](https://rowanzellers.com/hellaswag/)<br />COPA|[CommonsenseQA](https://www.tau-nlp.org/commonsenseqa)<br />[OpenBookQA](https://allenai.org/data/open-book-qa)<br />[ARC Easy/Challenge](https://leaderboard.allenai.org/arc_easy)<br />[PIQA](https://yonatanbisk.com/piqa/)|[SST-2/5](https://gluebenchmark.com/tasks)<br />TREC<br />AGNews|[RTE](https://super.gluebenchmark.com/tasks)<br />[CB](https://super.gluebenchmark.com/tasks)<br />[BoolQ](https://super.gluebenchmark.com/tasks)|LAMA|
+|Datasets|[StoryCloze](https://cs.rochester.edu/nlp/rocstories/)<br />[HellaSwag](https://rowanzellers.com/hellaswag/)<br />[COPA](https://super.gluebenchmark.com/tasks)|[CommonsenseQA](https://www.tau-nlp.org/commonsenseqa)<br />[OpenBookQA](https://allenai.org/data/open-book-qa)<br />[ARC Easy/Challenge](https://leaderboard.allenai.org/arc_easy)<br />[PIQA](https://yonatanbisk.com/piqa/)|[SST-2/5](https://gluebenchmark.com/tasks)<br />TREC<br />AGNews|[RTE](https://super.gluebenchmark.com/tasks)<br />[CB](https://super.gluebenchmark.com/tasks)<br />[BoolQ](https://super.gluebenchmark.com/tasks)|[LAMA](https://github.com/facebookresearch/LAMA)|
+
+Most of datasets can be loaded by the Hugginface's [datasets](https://huggingface.co/datasets); only a few of them require manually downloading with instructions prompted when you run the code.
 
 To run NLU experiments, simply run the following command:
 ```python
@@ -151,11 +153,11 @@ Some important arguments are listed as follows, please use `python main.py --hel
 
 ##### 5.1. Apply Coherence Boosting to Your Own Multi-choice Datasets
 
-In addition to the previous tasks, our codebase is flexible enough to incorporate any new multi-choice dataset with minial efforts (inspired by the open-source project [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness)). There roughly three steps:
+In addition to the previous tasks, our codebase is flexible enough to incorporate any new multi-choice dataset with minial efforts (inspired by the open-source project, [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness)). There roughly three steps:
 1. Register the new dataset in `__init__.py` in the `tasks` folder.
-2. Create a new class inheriting the `MultipleChoiceTask` class with data preprocessing functions, `standardize`
+2. Create a new class inheriting the `MultipleChoiceTask` class with data preprocessing functions (e.g., `load_data`, `standardize`)
 3. The most important function is the `get_contrast_ctx`, which is where you define your own premise-free prompt for coherence boosting
-
+See other task classes as examples and please free feel to let us know if you encounter any problems when adopting our code. 
 
 ****
 
