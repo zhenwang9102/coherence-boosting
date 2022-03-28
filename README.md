@@ -157,6 +157,7 @@ In addition to the previous tasks, our codebase is flexible enough to incorporat
 1. Register the new dataset in `__init__.py` in the `tasks` folder.
 2. Create a new class inheriting the `MultipleChoiceTask` class with data preprocessing functions (e.g., `load_data`, `standardize`)
 3. The most important function is the `get_contrast_ctx`, which is where you define your own premise-free prompt for coherence boosting
+
 See other task classes as examples and please free feel to let us know if you encounter any problems when adopting our code. 
 
 ****
