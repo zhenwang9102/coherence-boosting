@@ -12,10 +12,6 @@ import datasets
 from transformers import GPT2Tokenizer
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 
-import matplotlib.pyplot as plt
-import matplotlib
-matplotlib.use("Agg")
-
 from utils import *
 from task import LAMBADATask
 
@@ -37,23 +33,16 @@ class LAMA(LAMBADATask):
                           'P279': '[X] is a subclass of [Y] .', 
                           'P37': 'The official language of [X] is [Y] .', 
                           'P413': '[X] plays in [Y] position .', 
-                          #  'P166': '[X] was awarded the [Y] .',  # not stored
                           'P449': '[X] was originally aired on [Y] .', 
-                          #  'P69': '[X] was educated at the University of [Y] .',  # not stored
                           'P47': '[X] shares border with [Y] .', 
                           'P138': '[X] is named after [Y] .', 
                           'P364': 'The original language of [X] is [Y] .', 
-                          #  'P54': '[X] plays with [Y] .',  # not stored
                           'P463': '[X] is a member of [Y] .', 
                           'P101': '[X] works in the field of [Y] .', 
-                          #  'P1923': '[Y] participated in the [X] .',  # not stored
-                        #    'P106': '[X] is a [Y] by profession .',  # revise 
                           'P106': 'The profession of [X] is [Y] .', 
                           'P527': '[X] consists of [Y] .', 
-                          #  'P102': '[X] is a member of the [Y] political party .',  # not stored
                           'P530': '[X] maintains diplomatic relations with [Y] .', 
                           'P176': '[X] is produced by [Y] .', 
-                        #    'P27': '[X] is [Y] citizen .',   # revise
                           'P27': '[X] is a citizen of [Y] .', 
                           'P407': '[X] was written in [Y] .', 
                           'P30': '[X] is located in [Y] .', 
@@ -72,7 +61,6 @@ class LAMA(LAMBADATask):
                           'P1303': '[X] plays [Y] .', 
                           'P127': '[X] is owned by [Y] .', 
                           'P103': 'The native language of [X] is [Y] .', 
-                          #  'P190': '[X] and [Y] are twin cities .',  # bad template
                           'P1001': '[X] is a legal term in [Y] .', 
                           'P31': '[X] is a [Y] .', 
                           'P495': '[X] was created in [Y] .', 
@@ -95,6 +83,9 @@ class LAMA(LAMBADATask):
 
     def load_data(self):
         prefix = './data/lama/original_rob'
+        if not os.path.isdir(prefix):
+            raise FileNotFoundError('Data not found! Please download the preprocessed data from "https://github.com/tonyzhaozh/few-shot-learning/tree/main/data/lama".')
+        
         rela_ids = self.relations.keys()
         train, val, test = [], [], []
         for i, rela in enumerate(rela_ids):

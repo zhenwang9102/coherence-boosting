@@ -12,10 +12,6 @@ import datasets
 from transformers import GPT2Tokenizer
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 
-import matplotlib.pyplot as plt
-import matplotlib
-matplotlib.use("Agg")
-
 from utils import *
 from task import LAMBADATask
 

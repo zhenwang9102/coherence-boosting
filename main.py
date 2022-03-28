@@ -31,7 +31,7 @@ def main(args):
         for model_name in model_list:
             args['model_name'] = model_name
 
-            if model_name[3] == '3':
+            if model_name[3] == '3': # gpt-3 models
                 args['batch_size'] = 32
             else:
                 args['batch_size'] = 2

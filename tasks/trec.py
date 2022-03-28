@@ -42,7 +42,7 @@ class TREC(MultipleChoiceTask):
                     self.data['train'].append({'label': label, 
                                                'question': question})
         else:
-            raise FileNotFoundError("Train data not found!")
+            raise FileNotFoundError("Train data not found! Please put the official train file to ./data/trec")
 
         test_file = './data/trec/test.txt'
         if os.path.exists(test_file):
@@ -53,8 +53,7 @@ class TREC(MultipleChoiceTask):
                     self.data['test'].append({'label': label, 
                                               'question': question})
         else:
-            raise FileNotFoundError("Testing data not found!")
-
+            raise FileNotFoundError("Testing data not found! Please put the official train file to ./data/trec")
 
     def get_train_set(self):
         return self.data['train']

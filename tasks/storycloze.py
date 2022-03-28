@@ -34,14 +34,13 @@ class StoryCloze(MultipleChoiceTask):
     def load_data(self):
         self.data = {'train': [], 'validation': [], 'test': []}
 
-        # val_file = './data/storycloze/cloze_test_val__winter2018-cloze_test_ALL_val - 1 - 1.csv'
         val_file = './data/storycloze/cloze_test_val__spring2016 - cloze_test_ALL_val.csv'
         if os.path.exists(val_file):
             data = pd.read_csv(val_file)
             for idx, row in data.iterrows():
                 self.data['validation'].append(dict(row))
         else:
-            raise FileNotFoundError("Validation data not found!")
+            raise FileNotFoundError("Validation data not found! Please put the official spring2016 file to ./data/storycloze")
 
         test_file = './data/storycloze/cloze_test_test__spring2016 - cloze_test_ALL_test.csv'
         if os.path.exists(test_file):
@@ -49,7 +48,7 @@ class StoryCloze(MultipleChoiceTask):
             for idx, row in data.iterrows():
                 self.data['test'].append(dict(row))
         else:
-            raise FileNotFoundError("Testing data not found!")
+            raise FileNotFoundError("Testing data not found! Please put the official spring2016 file to ./data/storycloze")
 
     def get_train_set(self):
         return self.data['train']

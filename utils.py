@@ -12,11 +12,8 @@ import torch
 gpt2_map = {"gpt2-small": "gpt2", "gpt2-medium": "gpt2-medium", 
             "gpt2-large": "gpt2-large", "gpt2-xl": "gpt2-xl"}
 
-gpt3_map = {"gpt3-small": "ada-msft", "gpt3-medium": "babbage-msft", 
-            "gpt3-large": "curie-msft", "gpt3-xl": "davinci-msft"}
-
-# gpt3_map = {"gpt3-small": "ada", "gpt3-medium": "babbage", 
-#             "gpt3-large": "curie", "gpt3-xl": "davinci"}
+gpt3_map = {"gpt3-small": "ada", "gpt3-medium": "babbage", 
+            "gpt3-large": "curie", "gpt3-xl": "davinci"}
 
 
 def top_k_logits(logits, k):

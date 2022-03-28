@@ -40,7 +40,7 @@ class AGNews(MultipleChoiceTask):
             for idx, row in data.iterrows():
                 self.data['train'].append(dict(row))
         else:
-            raise FileNotFoundError("Train data not found!")
+            raise FileNotFoundError("Train data not found! Please put the official train file to ./data/agn")
 
         test_file = './data/agn/test.csv'
         if os.path.exists(test_file):
@@ -48,7 +48,7 @@ class AGNews(MultipleChoiceTask):
             for idx, row in data.iterrows():
                 self.data['test'].append(dict(row))
         else:
-            raise FileNotFoundError("Testing data not found!")
+            raise FileNotFoundError("Testing data not found! Please put the official test file to ./data/agn")
 
     def get_train_set(self):
         return self.data['train']
