@@ -32,7 +32,7 @@ def arg_parser():
     parser.add_argument('--random_seed', type=int, default=42)
     parser.add_argument('--model_name', type=str, default='gpt2')
     parser.add_argument('--context', type=str, default='gpt2-small')
-    parser.add_argument('--short_length', type=int, default=5)
+    parser.add_argument('--partial_length', type=int, default=5)
     parser.add_argument('--alpha', type=float, default=0.5)
     args = parser.parse_args()
     return vars(args)
@@ -87,6 +87,7 @@ def contrasting(model_name='gpt2', context='', partial_length=5, alpha=0.5, **kw
         device = 'cpu'
         model = AutoModelForCausalLM.from_pretrained(model_name).to(device)
     
+    model.eval()
     model.config.pad_token_id = model.config.eos_token_id
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     vocab_dict = {id: token for token, id in tokenizer.get_vocab().items()}
