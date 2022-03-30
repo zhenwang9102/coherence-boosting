@@ -49,17 +49,17 @@ We present a demo program to demonstrate the lack of coherence on existing pre-t
 
 [out]
 Top tokens based on full context:
-Ballad metre is "less regular and more conversational" than common
+ Ballad metre is "less regular and more conversational" than common
 
 Rank    Tokens     Logprobs    Probs
 ------  ---------  ----------  ---------
-1       Ġsense     -2.418      8.91%
-2       Ġin        -3.981      1.87%
-3       ,          -4.059      1.73%
-4       .          -4.066      1.72%
-5       Ġpractice  -4.544      1.06%
+1       Ġsense     -2.405      9.03%
+2       Ġin        -3.900      2.02%
+3       .          -3.978      1.87%
+4       ,          -4.097      1.66%
+5       Ġpractice  -4.287      1.37%
 ...     ...        ...         ...
-14      Ġmetre**   -5.206      0.548512%
+13      Ġmetre**   -5.098      0.610609%
 ** Target Token
 
 
@@ -82,11 +82,11 @@ Contrastive next token prediction:
 
 Rank    Tokens    Logprobs    Probs
 ------  --------  ----------  -------
-1       Ġmetre**  -1.084      33.83%
-2       Ġsense    -2.354      9.50%
-3       Ġmeter    -2.800      6.08%
-4       Ġfoot     -3.106      4.48%
-5       Ġmeters   -3.209      4.04%
+1       Ġmetre**  -0.923      39.74%
+2       Ġsense    -2.334      9.69%
+3       Ġmeter    -2.785      6.17%
+4       Ġin       -3.210      4.03%
+5       Ġfoot     -3.220      3.99%
 ** Target Token
 ```
 

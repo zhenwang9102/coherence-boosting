@@ -100,12 +100,6 @@ def contrasting(model_name='gpt2', context='', partial_length=5, alpha=0.5, **kw
     long_logits = F.log_softmax(model(context)[0][:, -1, :].detach().cpu(), dim=1).numpy().reshape(-1)
     short_logits = F.log_softmax(model(context[:, -partial_length:])[0][:, -1, :].detach().cpu(), dim=1).numpy().reshape(-1)
     cb_logits = (1 + alpha) * long_logits - alpha * short_logits
-
-    # print('Long context:\t{}\nShort context:\t{}\nTarget token:\t{}\n'.format(
-    #     tokenizer.decode(context[0]),
-    #     tokenizer.decode(context[0, -partial_length:]),
-    #     tokenizer.decode(target)
-    # ))
     
     print('Top tokens based on full context:\n{}\n'.format(color.BOLD + tokenizer.decode(context[0]) + color.END))
     print_ranking(long_logits, target, vocab_dict)
