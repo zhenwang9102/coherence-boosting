@@ -45,7 +45,7 @@ We present a demo program to demonstrate the lack of coherence on existing pre-t
 
 ```python
 >>> from cb_demo import contrasting
->>> contrasting(model_name='gpt2', context='Ballad metre is "less regular and more conversational" than common metre', --partial_length=8, --alpha=0.5)
+>>> contrasting(model_name='gpt2', context=' Ballad metre is "less regular and more conversational" than common metre', --partial_length=8, --alpha=0.5)
 
 [out]
 Top tokens based on full context:
@@ -92,11 +92,11 @@ Rank    Tokens    Logprobs    Probs
 
 You can replicate the results for some examples in Figure 1 of the paper by the following code:
 ```python
-python cb_demo.py --context='Ballad metre is "less regular and more conversational" than common metre' --model_name='gpt2' --partial_length=8 --alpha=0.5
+python cb_demo.py --context=' Ballad metre is "less regular and more conversational" than common metre' --model_name='gpt2' --partial_length=8 --alpha=0.5
 
-python cb_demo.py --context='Isley Brewing Company: Going Mintal — a minty milk chocolate stout' --model_name='gpt2' --partial_length=8 --alpha=0.5
+python cb_demo.py --context=' Isley Brewing Company: Going Mintal — a minty milk chocolate stout' --model_name='gpt2' --partial_length=8 --alpha=0.5
 
-python cb_demo.py --context='Other times anxiety is not as easy to see, but can still be just as debilitating' --model_name='gpt2' --partial_length=8 --alpha=0.5
+python cb_demo.py --context=' Other times anxiety is not as easy to see, but can still be just as debilitating' --model_name='gpt2' --partial_length=8 --alpha=0.5
 
 ```
 
