@@ -166,9 +166,20 @@ See other task classes as examples and please free feel to let us know if you en
 
 #### 6. Natural Language Generation
 
-Generic Text
+We provide a generation model wrapper compatible with the HuggingFace `transformers` library in `generation/generation.py`. You can create coherence-boosted variants of any autoregressive LM using the class in the [example script](https://github.com/zhenwang9102/coherence-boosting/tree/main/generation/generation.py):
+```python
+>>> boosted_model = generation.BoostedModel(base_model, k=8, alpha_long=1.5, alpha_short=-0.5)
+```
+The `boosted_model` can then be flexibly used with the `generate` function, 
 
-Dialogue Response Generation
+```python
+>>> ins = T.LongTensor([tokenizer.encode('Once upon a midnight dreary,')])
+>>> outputs = boosted_model.generate(input_ids=ins, do_sample=True, max_length=100, top_p=0.95)
+>>> tokenizer.decode(outputs[0])
+"Once upon a midnight dreary, while I pondered over these things, I suddenly became aware of a strange and terrible noise. I turned round, and saw that the old man was standing near me. He was wearing a black suit, with a black tie, and a black hat. He had a long, thin, black beard, and his eyes were black. His hair was of a dark brown colour, and was very long. His face was rather large, and his lips were somewhat"
+```  
+
+The model wrapper is readily adapted to scenarios in which the short context is the currently generated text minus a prefix of a certain length (*e.g.*, the previous turn in a conversation) by dynamically setting `boosted_model.k` to the negative prefix length.
 
 We present some [conditional generation outputs](https://github.com/zhenwang9102/coherence-boosting/tree/main/generation/outputs). 
 
