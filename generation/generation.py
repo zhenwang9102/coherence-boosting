@@ -15,7 +15,7 @@ class BoostedModel(transformers.modeling_utils.PreTrainedModel):
         kwargs['input_ids'] = kwargs['input_ids'][...,-self.k:]
         x_short = self.base_lm.forward(*args, **kwargs)
        
-        x_long.logits[...,-1,:] = self.alpha_long*x_long.logits[...,-1,:] - self.alpha_short*x_short.logits[...,-1,:]
+        x_long.logits[...,-1,:] = self.alpha_long*x_long.logits[...,-1,:] + self.alpha_short*x_short.logits[...,-1,:]
         
         return x_long
     
