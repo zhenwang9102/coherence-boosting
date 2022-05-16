@@ -2,6 +2,8 @@
 
 Source code for ACL 2022 paper, "[Coherence boosting: When your pretrained language model is not paying enough attention](https://arxiv.org/abs/2110.08294)"
 
+[**DEMO (live during ACL conference)**](http://13.90.37.71:4444/cb.html)  
+
 ****
 
 * <a href='#introduction'>1. Introduction</a>
