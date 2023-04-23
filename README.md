@@ -1,8 +1,8 @@
-# Boosting Coherence of Language Models (ACL 2022)
+# Coherence Boosting (ACL 2022)
 
-Source code for ACL 2022 paper, "[Coherence boosting: When your pretrained language model is not paying enough attention](https://arxiv.org/abs/2110.08294)"
+Source code for the ACL 2022 paper "Coherence boosting: When your pretrained language model is not paying enough attention" ([arXiv](https://arxiv.org/abs/2110.08294), [ACL Anthology](https://aclanthology.org/2022.acl-long.565/))
 
-[**DEMO (live during ACL conference)**](http://13.90.37.71:4444/cb.html)  
+<!-- [**DEMO (live during ACL conference)**](http://13.90.37.71:4444/cb.html)   -->
 
 ****
 
@@ -30,11 +30,17 @@ Long-range semantic coherence remains a challenge in automatic language generati
 If you find the paper and code useful, please kindly star this repo and cite the paper. Thanks so much!
 
 ```bibtex
-@inproceedings{malkin2021boosting,
-  author    = {Malkin, Nikolay and Wang, Zhen and Jojic, Nebojsa},
-  title     = {Coherence boosting: When your pretrained language model is not paying enough attention},
-  booktitle = {Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics},
-  year      = {2022}
+@inproceedings{malkin-etal-2022-coherence,
+    title = "Coherence boosting: When your pretrained language model is not paying enough attention",
+    author = "Malkin, Nikolay and Wang, Zhen and Jojic, Nebojsa",
+    booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = may,
+    year = "2022",
+    address = "Dublin, Ireland",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.acl-long.565",
+    doi = "10.18653/v1/2022.acl-long.565",
+    pages = "8214--8236"
 }
 ```
 
@@ -183,8 +189,7 @@ The `boosted_model` can then be flexibly used with the `generate` function,
 
 The model wrapper is readily adapted to scenarios in which the short context is the currently generated text minus a prefix of a certain length (*e.g.*, the previous turn in a conversation) by dynamically setting `boosted_model.k` to the negative prefix length.
 
-We present some [conditional generation outputs](https://github.com/zhenwang9102/coherence-boosting/tree/main/generation/outputs). 
-
+We present some [conditional generation outputs](https://github.com/zhenwang9102/coherence-boosting/tree/main/generation/outputs). The evaluation metrics shown in Table 1 can be evaluated using the code from [this repository](https://github.com/ari-holtzman/degen) for the first four columns or using the code [here](https://github.com/zhenwang9102/coherence-boosting/tree/main/generation/metrics) for the new long-range coherence metrics we introduced.
 
 ****
 
