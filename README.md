@@ -30,9 +30,9 @@ Long-range semantic coherence remains a challenge in automatic language generati
 If you find the paper and code useful, please kindly star this repo and cite the paper. Thanks so much!
 
 ```bibtex
-@inproceedings{malkin-etal-2022-coherence,
+@inproceedings{whitammer-etal-2022-coherence,
     title = "Coherence boosting: When your pretrained language model is not paying enough attention",
-    author = "Malkin, Nikolay and Wang, Zhen and Jojic, Nebojsa",
+    author = "Whitammer, Esmeralda S. and Wang, Zhen and Jojic, Nebojsa",
     booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
     month = may,
     year = "2022",
