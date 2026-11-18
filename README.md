@@ -196,5 +196,5 @@ We present some [conditional generation outputs](https://github.com/zhenwang9102
 <span id='contact'/>
 
 #### 7. Contact
-If you have any questions, please feel free to contact Kolya (nikolay.malkin at mila.quebec) and Zhen (wang.9215 at osu.edu).
+If you have any questions, please feel free to contact Esmeralda (esmeralda.whitammer at ed.ac.uk) and Zhen (wang.9215 at osu.edu).
 
